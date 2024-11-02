@@ -269,7 +269,7 @@ function neop_schreibe_zch(snr: number, zch_str: string = "A", color: number) {
         zeichen_matrix2.forEach(function (zahl, zeile) {
             for (let bit2 = 0; bit2 < mx2; bit2++) {
                 // let z = zeile, c = bit2 //7- minus
-                let c = zeile, z = bit2 //7- minus
+                let c = zeile, z = bit2 //7- minus 2024
                 //b=z, z=bit
                 //b=z, z=mx-1-bit
                 if (zahl & Math.pow(2, (bit2 + shift + mx2) % mx2)) {
@@ -324,7 +324,7 @@ let bst_muster = [
 let bst_reihe: string = "";
 strip_helligkeit = 25;
 // aucha scrollspeed
-strip_pause = 300
+strip_pause = 500
 let arr_zeichen: number[][];
 neo_strip_anzahl = 1
 // ende variable
@@ -333,15 +333,17 @@ init_alphabet()
 default_strip_data()
 basic.showIcon(IconNames.No)
 // test();
-
+const vers=2021;
 // test("ÄÖÜäöüabcdefghijklmnopqrstuvwxyz");
-test("fgjkpqyz");
+// test("fgjkpqyz");
+// test("ABCabcöäü")
+test("Aber das ist falsch. ")
 // test("Das ist eine gute Möglichkeite * ");
 
 basic.forever(() => {
     if (automat) {
-
-        arr_neop_strips[sss].rotate(16); arr_neop_strips[sss].show();
+        arr_neop_strips[sss].rotate(16*1); 
+        arr_neop_strips[sss].show();
         basic.pause(strip_pause)
     }
 })

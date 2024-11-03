@@ -140,7 +140,7 @@ function init_alphabet() {
 
 // }
 input.onButtonPressed(Button.A, function () {
-    power.fullPowerOn(FullPowerSource.A)
+    // power.fullPowerOn(FullPowerSource.A)
     strip_helligkeit = Math.min(strip_helligkeit + 25, 255);;
     arr_neop_strips[0].setBrightness(strip_helligkeit)
     basic.showNumber(strip_helligkeit);
@@ -370,7 +370,7 @@ basic.forever(() => {
         if (runden==max_runden) {
             arr_neop_strips[0].clear();
             basic.showString(" ");
-            power.lowPowerRequest()
+            // power.lowPowerRequest()
         }
     }
 })

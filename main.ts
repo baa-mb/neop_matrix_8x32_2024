@@ -269,7 +269,7 @@ function neop_schreibe_zch(snr: number, zch_str: string = "A", color: number) {
             if (found2 == -1) {
                 found2 = 0;
             }
-            zeichen_matrix2 = arr_zeichen[found2]
+            zeichen_matrix2 = arr_zeichen[found2];
         }
         // arr_neop_strips[snr].clear()
         // arr_neop_strips[snr].show()

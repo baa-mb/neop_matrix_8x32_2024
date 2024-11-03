@@ -28,7 +28,8 @@ function loesche_matrix(snr: number) {
 
 function init_alphabet() {
     // bstreihenfolge einhalten
-    bst_reihe = "? ABCDEFGHIJKLMNOPQRSTUVWXYZÄÖÜäöü0123456789!?.,*+-=≠:%abcdefghijklmnopqrstuvwxyz#$&()/@;<>[]|{}~€"
+    bst_reihe = "? ABCDEFGHIJKLMNOPQRSTUVWXYZÄÖÜäöü0123456789!?.,*+-=≠:%abcdefghijklmnopqrstuvwxyz#$&()/@;<>[]|{}~€";
+    
     arr_zeichen = [
         [14, 17, 1, 2, 4, 0, 4, 0], //?
         [0, 0, 0, 0, 0, 0, 0, 0],
@@ -287,6 +288,7 @@ function neop_schreibe_zch(snr: number, zch_str: string = "A", color: number) {
         // arr_neop_strips[sss].show();
         if (is_type2 == 1) {
             pause(strip_pause)
+            // basic.showString(zch2)
         }
 
         arr_neop_strips[sss].rotate(16 * 3);
@@ -303,7 +305,7 @@ interface neop {
     hwMatrix: Array<number>;
 }
 // hardwareeinstellungen ########################### 3 Matriken
-// entweder alte verdrahtung, dann 32 x 8 oder 68 x 32
+// entweder alte verdrahtung, dann 32 x 8 oder 8 x 32
 arr_tech_matrix = [[8, 32], [8, 8], [5, 7], [16, 16]]
 let arr_tech_pin = [
     DigitalPin.P0,

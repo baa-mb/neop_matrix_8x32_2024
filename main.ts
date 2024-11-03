@@ -140,6 +140,7 @@ function init_alphabet() {
 
 // }
 input.onButtonPressed(Button.A, function () {
+    power.fullPowerOn(FullPowerSource.A)
     strip_helligkeit = Math.min(strip_helligkeit + 25, 255);;
     arr_neop_strips[0].setBrightness(strip_helligkeit)
     basic.showNumber(strip_helligkeit);
@@ -352,7 +353,8 @@ const vers=2021;
 test(0, "DIGITALE GRUNDBILDUNG MIT DIGI.CASE - ")
 // test(0, "Digitale Grundbildung mit Micro:bit * ")
 // test("Das ist eine gute Möglichkeite * ");
-
+let runden:number = 0;
+const max_runden:number=2;
 basic.forever(() => {
     if (automat) {
         arr_neop_strips[0].rotate(16*1); 
@@ -364,5 +366,12 @@ basic.forever(() => {
 
         basic.pause(strip_pause)
         // arr_neop_strips[0].showRainbow(1, 360)
+        runden++;
+        if (runden==max_runden) {
+            arr_neop_strips[0].clear();
+            basic.showString(" ");
+            power.lowPowerRequest()
+        }
     }
 })
+

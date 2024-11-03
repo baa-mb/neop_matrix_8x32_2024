@@ -21,6 +21,7 @@ function set_helligkeit(helligkeit: number, zch_pause: number) {
     }
 }
 function loesche_matrix(snr: number) {
+
     arr_neop_strips[snr].clear()
     arr_neop_strips[snr].show()
 }
@@ -139,10 +140,16 @@ function init_alphabet() {
 
 // }
 input.onButtonPressed(Button.A, function () {
+    strip_helligkeit = Math.min(strip_helligkeit + 25, 255);;
+    arr_neop_strips[0].setBrightness(strip_helligkeit)
+    basic.showNumber(strip_helligkeit);
     automat = !automat;
 })
 
 input.onButtonPressed(Button.B, function () {
+    strip_helligkeit = Math.max(strip_helligkeit-25,25);
+    arr_neop_strips[0].setBrightness(strip_helligkeit)
+    basic.showNumber(strip_helligkeit);
     arr_neop_strips[sss].rotate(-16); arr_neop_strips[sss].show();
 })
 
@@ -335,7 +342,7 @@ neo_strip_anzahl = 1
 // beginn initialisierung ############################
 init_alphabet()
 default_strip_data()
-basic.showIcon(IconNames.No)
+basic.showIcon(IconNames.SmallDiamond)
 // test();
 const vers=2021;
 // test("ÄÖÜäöüabcdefghijklmnopqrstuvwxyz");

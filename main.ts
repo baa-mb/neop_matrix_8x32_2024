@@ -340,7 +340,8 @@ const vers=2021;
 // test("fgjkpqyz");
 // test("ABCabcöäü")
 // test(0,"Aber das ist falsch. ")
-test(0, "DIGITALE GRUNDBILDUNG - ")
+test(0, "DIGITALE GRUNDBILDUNG MIT DIGI.CASE - ")
+// test(0, "Digitale Grundbildung mit Micro:bit * ")
 // test("Das ist eine gute Möglichkeite * ");
 
 basic.forever(() => {
